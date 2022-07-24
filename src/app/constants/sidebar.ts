@@ -77,6 +77,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:cloud',
                 link: '/pages/profile',
             },
+<<<<<<< HEAD
             {
                 id: 'pages.custom_syncs',
                 title: 'Custom syncs',
@@ -87,6 +88,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ],
     },
 ];
+=======
+        ],
+    },
+];
+
+export const FuseNavigationSettings: any[] = [
+    {
+        id: 'settings',
+        title: 'Settings',
+        type: 'Basic',
+        icon: 'heroicons_outline:collection',
+        link: '/pages/settings',
+    },
+];
+>>>>>>> 3ec1e61fbd0434831bbb93ed1ab9fb0dbf67b079
 export const compactNavigation: FuseNavigationItem[] = [
     {
         id: 'dashboards',

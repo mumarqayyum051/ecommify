@@ -1,4 +1,15 @@
-@use 'styles/appearances/default';
-@use 'styles/appearances/compact';
-@use 'styles/appearances/dense';
-@use 'styles/appearances/thin';
+@use "styles/appearances/default";
+@use "styles/appearances/compact";
+@use "styles/appearances/dense";
+@use "styles/appearances/thin";
+
+.fuse-vertical-navigation-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    img {
+        height: auto;
+        width: 80%;
+    }
+}

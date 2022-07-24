@@ -37,34 +37,34 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/auth/confirmation-required/confirmation-required.module'
-                    ).then((m) => m.AuthConfirmationRequiredModule),
+                    ).then((m: any) => m.AuthConfirmationRequiredModule),
             },
             {
                 path: 'forgot-password',
                 loadChildren: () =>
                     import(
                         'app/modules/auth/forgot-password/forgot-password.module'
-                    ).then((m) => m.AuthForgotPasswordModule),
+                    ).then((m: any) => m.AuthForgotPasswordModule),
             },
             {
                 path: 'reset-password',
                 loadChildren: () =>
                     import(
                         'app/modules/auth/reset-password/reset-password.module'
-                    ).then((m) => m.AuthResetPasswordModule),
+                    ).then((m: any) => m.AuthResetPasswordModule),
             },
             {
                 path: 'sign-in',
                 loadChildren: () =>
                     import('app/modules/auth/sign-in/sign-in.module').then(
-                        (m) => m.AuthSignInModule
+                        (m: any) => m.AuthSignInModule
                     ),
             },
             {
                 path: 'sign-up',
                 loadChildren: () =>
                     import('app/modules/auth/sign-up/sign-up.module').then(
-                        (m) => m.AuthSignUpModule
+                        (m: any) => m.AuthSignUpModule
                     ),
             },
         ],
@@ -84,7 +84,7 @@ export const appRoutes: Route[] = [
                 path: 'sign-out',
                 loadChildren: () =>
                     import('app/modules/auth/sign-out/sign-out.module').then(
-                        (m) => m.AuthSignOutModule
+                        (m: any) => m.AuthSignOutModule
                     ),
             },
             {
@@ -92,7 +92,7 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/auth/unlock-session/unlock-session.module'
-                    ).then((m) => m.AuthUnlockSessionModule),
+                    ).then((m: any) => m.AuthUnlockSessionModule),
             },
         ],
     },
@@ -109,7 +109,7 @@ export const appRoutes: Route[] = [
                 path: 'home',
                 loadChildren: () =>
                     import('app/modules/landing/home/home.module').then(
-                        (m) => m.LandingHomeModule
+                        (m: any) => m.LandingHomeModule
                     ),
             },
         ],
@@ -134,28 +134,28 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/dashboards/project/project.module'
-                            ).then((m) => m.ProjectModule),
+                            ).then((m: any) => m.ProjectModule),
                     },
                     {
                         path: 'analytics',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/dashboards/analytics/analytics.module'
-                            ).then((m) => m.AnalyticsModule),
+                            ).then((m: any) => m.AnalyticsModule),
                     },
                     {
                         path: 'finance',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/dashboards/finance/finance.module'
-                            ).then((m) => m.FinanceModule),
+                            ).then((m: any) => m.FinanceModule),
                     },
                     {
                         path: 'crypto',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/dashboards/crypto/crypto.module'
-                            ).then((m) => m.CryptoModule),
+                            ).then((m: any) => m.CryptoModule),
                     },
                 ],
             },
@@ -169,212 +169,70 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/academy/academy.module'
-                            ).then((m) => m.AcademyModule),
+                            ).then((m: any) => m.AcademyModule),
                     },
                     {
                         path: 'chat',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/chat/chat.module'
-                            ).then((m) => m.ChatModule),
+                            ).then((m: any) => m.ChatModule),
                     },
                     {
                         path: 'contacts',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/contacts/contacts.module'
-                            ).then((m) => m.ContactsModule),
+                            ).then((m: any) => m.ContactsModule),
                     },
                     {
                         path: 'ecommerce',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/ecommerce/ecommerce.module'
-                            ).then((m) => m.ECommerceModule),
+                            ).then((m: any) => m.ECommerceModule),
                     },
                     {
                         path: 'file-manager',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/file-manager/file-manager.module'
-                            ).then((m) => m.FileManagerModule),
+                            ).then((m: any) => m.FileManagerModule),
                     },
                     {
                         path: 'help-center',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/help-center/help-center.module'
-                            ).then((m) => m.HelpCenterModule),
+                            ).then((m: any) => m.HelpCenterModule),
                     },
                     {
                         path: 'mailbox',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/mailbox/mailbox.module'
-                            ).then((m) => m.MailboxModule),
+                            ).then((m: any) => m.MailboxModule),
                     },
                     {
                         path: 'notes',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/notes/notes.module'
-                            ).then((m) => m.NotesModule),
+                            ).then((m: any) => m.NotesModule),
                     },
                     {
                         path: 'scrumboard',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/scrumboard/scrumboard.module'
-                            ).then((m) => m.ScrumboardModule),
+                            ).then((m: any) => m.ScrumboardModule),
                     },
                     {
                         path: 'tasks',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/apps/tasks/tasks.module'
-                            ).then((m) => m.TasksModule),
-                    },
-                ],
-            },
-
-            // Pages
-            {
-                path: 'pages',
-                children: [
-                    // Activities
-                    {
-                        path: 'activities',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/activities/activities.module'
-                            ).then((m) => m.ActivitiesModule),
-                    },
-
-                    // Authentication
-                    {
-                        path: 'authentication',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/authentication/authentication.module'
-                            ).then((m) => m.AuthenticationModule),
-                    },
-
-                    // Coming Soon
-                    {
-                        path: 'coming-soon',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/coming-soon/coming-soon.module'
-                            ).then((m) => m.ComingSoonModule),
-                    },
-
-                    // Error
-                    {
-                        path: 'error',
-                        children: [
-                            {
-                                path: '404',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/error/error-404/error-404.module'
-                                    ).then((m) => m.Error404Module),
-                            },
-                            {
-                                path: '500',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/error/error-500/error-500.module'
-                                    ).then((m) => m.Error500Module),
-                            },
-                        ],
-                    },
-
-                    // Invoice
-                    {
-                        path: 'invoice',
-                        children: [
-                            {
-                                path: 'printable',
-                                children: [
-                                    {
-                                        path: 'compact',
-                                        loadChildren: () =>
-                                            import(
-                                                'app/modules/admin/pages/invoice/printable/compact/compact.module'
-                                            ).then((m) => m.CompactModule),
-                                    },
-                                    {
-                                        path: 'modern',
-                                        loadChildren: () =>
-                                            import(
-                                                'app/modules/admin/pages/invoice/printable/modern/modern.module'
-                                            ).then((m) => m.ModernModule),
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-
-                    // Maintenance
-                    {
-                        path: 'maintenance',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/maintenance/maintenance.module'
-                            ).then((m) => m.MaintenanceModule),
-                    },
-
-                    // Pricing
-                    {
-                        path: 'pricing',
-                        children: [
-                            {
-                                path: 'modern',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/modern/modern.module'
-                                    ).then((m) => m.PricingModernModule),
-                            },
-                            {
-                                path: 'simple',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/simple/simple.module'
-                                    ).then((m) => m.PricingSimpleModule),
-                            },
-                            {
-                                path: 'single',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/single/single.module'
-                                    ).then((m) => m.PricingSingleModule),
-                            },
-                            {
-                                path: 'table',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/table/table.module'
-                                    ).then((m) => m.PricingTableModule),
-                            },
-                        ],
-                    },
-
-                    // Profile
-                    {
-                        path: 'profile',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/profile/profile.module'
-                            ).then((m) => m.ProfileModule),
-                    },
-
-                    // Settings
-                    {
-                        path: 'settings',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/settings/settings.module'
-                            ).then((m) => m.SettingsModule),
+                            ).then((m: any) => m.TasksModule),
                     },
                 ],
             },
@@ -383,7 +241,7 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/admin/pages/settings/settings.module'
-                    ).then((m) => m.SettingsModule),
+                    ).then((m: any) => m.SettingsModule),
             },
 
             // User Interface
@@ -396,7 +254,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/material-components/material-components.module'
-                            ).then((m) => m.MaterialComponentsModule),
+                            ).then((m: any) => m.MaterialComponentsModule),
                     },
 
                     // Fuse Components
@@ -405,7 +263,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/fuse-components/fuse-components.module'
-                            ).then((m) => m.FuseComponentsModule),
+                            ).then((m: any) => m.FuseComponentsModule),
                     },
 
                     // Other Components
@@ -414,7 +272,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/other-components/other-components.module'
-                            ).then((m) => m.OtherComponentsModule),
+                            ).then((m: any) => m.OtherComponentsModule),
                     },
 
                     // TailwindCSS
@@ -423,7 +281,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/tailwindcss/tailwindcss.module'
-                            ).then((m) => m.TailwindCSSModule),
+                            ).then((m: any) => m.TailwindCSSModule),
                     },
 
                     // Advanced Search
@@ -432,7 +290,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/advanced-search/advanced-search.module'
-                            ).then((m) => m.AdvancedSearchModule),
+                            ).then((m: any) => m.AdvancedSearchModule),
                     },
 
                     // Animations
@@ -441,7 +299,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/animations/animations.module'
-                            ).then((m) => m.AnimationsModule),
+                            ).then((m: any) => m.AnimationsModule),
                     },
 
                     // Cards
@@ -450,7 +308,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/cards/cards.module'
-                            ).then((m) => m.CardsModule),
+                            ).then((m: any) => m.CardsModule),
                     },
 
                     // Colors
@@ -459,7 +317,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/colors/colors.module'
-                            ).then((m) => m.ColorsModule),
+                            ).then((m: any) => m.ColorsModule),
                     },
 
                     // Confirmation Dialog
@@ -468,7 +326,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/confirmation-dialog/confirmation-dialog.module'
-                            ).then((m) => m.ConfirmationDialogModule),
+                            ).then((m: any) => m.ConfirmationDialogModule),
                     },
 
                     // Datatable
@@ -477,7 +335,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/datatable/datatable.module'
-                            ).then((m) => m.DatatableModule),
+                            ).then((m: any) => m.DatatableModule),
                     },
 
                     // Forms
@@ -489,21 +347,21 @@ export const appRoutes: Route[] = [
                                 loadChildren: () =>
                                     import(
                                         'app/modules/admin/ui/forms/fields/fields.module'
-                                    ).then((m) => m.FormsFieldsModule),
+                                    ).then((m: any) => m.FormsFieldsModule),
                             },
                             {
                                 path: 'layouts',
                                 loadChildren: () =>
                                     import(
                                         'app/modules/admin/ui/forms/layouts/layouts.module'
-                                    ).then((m) => m.FormsLayoutsModule),
+                                    ).then((m: any) => m.FormsLayoutsModule),
                             },
                             {
                                 path: 'wizards',
                                 loadChildren: () =>
                                     import(
                                         'app/modules/admin/ui/forms/wizards/wizards.module'
-                                    ).then((m) => m.FormsWizardsModule),
+                                    ).then((m: any) => m.FormsWizardsModule),
                             },
                         ],
                     },
@@ -514,7 +372,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/icons/icons.module'
-                            ).then((m) => m.IconsModule),
+                            ).then((m: any) => m.IconsModule),
                     },
 
                     // Page Layouts
@@ -523,7 +381,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/page-layouts/page-layouts.module'
-                            ).then((m) => m.PageLayoutsModule),
+                            ).then((m: any) => m.PageLayoutsModule),
                     },
 
                     // Typography
@@ -532,7 +390,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/ui/typography/typography.module'
-                            ).then((m) => m.TypographyModule),
+                            ).then((m: any) => m.TypographyModule),
                     },
                 ],
             },
@@ -547,7 +405,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/docs/changelog/changelog.module'
-                            ).then((m) => m.ChangelogModule),
+                            ).then((m: any) => m.ChangelogModule),
                     },
 
                     // Guides
@@ -556,7 +414,7 @@ export const appRoutes: Route[] = [
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/docs/guides/guides.module'
-                            ).then((m) => m.GuidesModule),
+                            ).then((m: any) => m.GuidesModule),
                     },
                 ],
             },
@@ -568,7 +426,7 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/admin/pages/error/error-404/error-404.module'
-                    ).then((m) => m.Error404Module),
+                    ).then((m: any) => m.Error404Module),
             },
             { path: '**', redirectTo: '404-not-found' },
         ],

@@ -77,17 +77,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:cloud',
                 link: '/pages/profile',
             },
+            {
+                id: 'pages.custom_syncs',
+                title: 'Custom syncs',
+                type: 'basic',
+                icon: 'heroicons_outline:cloud',
+                link: '/pages/settings',
+            },
         ],
-    },
-];
-
-export const settings: any = [
-    {
-        id: 'pages',
-        title: 'Settings',
-        type: 'basic',
-        icon: 'heroicons_outline:collection',
-        link: '/pages/settings',
     },
 ];
 export const compactNavigation: FuseNavigationItem[] = [

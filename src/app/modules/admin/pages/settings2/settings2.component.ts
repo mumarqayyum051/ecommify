@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
+/* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable quotes */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
@@ -14,13 +13,14 @@ import {
 import { MatDrawer } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
-import { settingsRoutes } from './settings.routing';
+import { settings2Routes } from './settings2.routing';
+
 @Component({
-    selector: 'app-settings',
-    templateUrl: './settings.component.html',
-    styleUrls: ['./settings.component.css'],
+    selector: 'app-settings2',
+    templateUrl: './settings2.component.html',
+    styleUrls: ['./settings2.component.css'],
 })
-export class SettingsComponent implements OnInit {
+export class Settings2Component implements OnInit {
     @ViewChild('drawer') drawer: MatDrawer;
     drawerMode: 'over' | 'side' = 'side';
     drawerOpened: boolean = true;
@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
     selectedPanel: string = 'account';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     // eslint-disable-next-line @typescript-eslint/member-ordering
-    settingRoutes: any = settingsRoutes;
+    settingRoutes: any = settings2Routes;
 
     /**
      * Constructor

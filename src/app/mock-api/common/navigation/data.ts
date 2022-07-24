@@ -39,6 +39,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:academic-cap',
                 link: '/apps/academy',
             },
+            {
+                id: 'apps.custom_order_ui',
+                title: 'Custom order UI',
+                type: 'basic',
+                icon: 'heroicons_outline:chat-alt',
+                link: '/apps/chat',
+            },
+            {
+                id: 'apps.custom_discogs_sync',
+                title: 'Custom Discogs sync',
+                type: 'basic',
+                icon: 'heroicons_outline:cloud',
+                link: '/apps/contacts',
+            },
         ],
     },
     {
@@ -68,7 +82,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Orders',
                 type: 'basic',
                 icon: 'heroicons_outline:user-group',
-                link: '/pages/maintenance',
+                link: '/pages/coming-soon',
             },
             {
                 id: 'pages.tracking',
@@ -77,13 +91,19 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:cloud',
                 link: '/pages/profile',
             },
+            {
+                id: 'pages.custom_syncs',
+                title: 'Custom syncs',
+                type: 'basic',
+                icon: 'heroicons_outline:cloud',
+                link: '/pages/invoice',
+            },
         ],
     },
 ];
-
 export const settings: any = [
     {
-        id: 'pages',
+        id: 'pages.settings',
         title: 'Settings',
         type: 'basic',
         icon: 'heroicons_outline:collection',

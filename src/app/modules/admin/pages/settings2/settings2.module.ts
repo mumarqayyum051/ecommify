@@ -10,14 +10,14 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FuseAlertModule } from '@fuse/components/alert';
 import { SharedModule } from 'app/shared/shared.module';
-import { SettingsAccountComponent } from 'app/modules/admin/pages/settings/account/account.component';
-import { SettingsSecurityComponent } from 'app/modules/admin/pages/settings/security/security.component';
-import { SettingsPlanBillingComponent } from 'app/modules/admin/pages/settings/plan-billing/plan-billing.component';
-import { SettingsNotificationsComponent } from 'app/modules/admin/pages/settings/notifications/notifications.component';
-import { SettingsTeamComponent } from 'app/modules/admin/pages/settings/team/team.component';
-import { settingsRoutes } from 'app/modules/admin/pages/settings/settings.routing';
-import { SettingsComponent } from './settings.component';
-import { TestComponent } from './test/test.component';
+import { SettingsAccountComponent } from 'app/modules/admin/pages/settings2/account/account.component';
+import { SettingsSecurityComponent } from 'app/modules/admin/pages/settings2/security/security.component';
+import { SettingsPlanBillingComponent } from 'app/modules/admin/pages/settings2/plan-billing/plan-billing.component';
+import { SettingsNotificationsComponent } from 'app/modules/admin/pages/settings2/notifications/notifications.component';
+import { SettingsTeamComponent } from 'app/modules/admin/pages/settings2/team/team.component';
+import { settings2Routes } from 'app/modules/admin/pages/settings2/settings2.routing';
+import { Settings2Component } from './settings2.component';
+
 @NgModule({
     declarations: [
         SettingsAccountComponent,
@@ -25,11 +25,10 @@ import { TestComponent } from './test/test.component';
         SettingsPlanBillingComponent,
         SettingsNotificationsComponent,
         SettingsTeamComponent,
-        SettingsComponent,
-        TestComponent,
+        Settings2Component,
     ],
     imports: [
-        RouterModule.forChild(settingsRoutes),
+        RouterModule.forChild(settings2Routes),
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
@@ -42,4 +41,4 @@ import { TestComponent } from './test/test.component';
         SharedModule,
     ],
 })
-export class SettingsModule {}
+export class Settings2Module {}

@@ -85,8 +85,8 @@ export const FuseNavigationSettings: any[] = [
     {
         id: 'settings',
         title: 'Settings',
-        type: 'basic',
-        icon: 'ci:settings',
+        type: 'Basic',
+        icon: 'heroicons_outline:collection',
         link: '/pages/settings',
     },
 ];

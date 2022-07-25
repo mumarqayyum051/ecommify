@@ -62,7 +62,7 @@
                 <div class="mt-4">
                     <!-- Email field -->
                     <mat-form-field class="w-full">
-                        <mat-label>Email address</mat-label>
+                        <mat-label class="required">Email address</mat-label>
                         <input id="email" matInput />
                         <mat-error> Email address is required </mat-error>
                         <mat-error>
@@ -72,7 +72,7 @@
 
                     <!-- Password field -->
                     <mat-form-field class="w-full">
-                        <mat-label>Password</mat-label>
+                        <mat-label class="required">Password</mat-label>
                         <input
                             id="password"
                             matInput
@@ -119,14 +119,8 @@
                     type="submit"
                     class="submit-button mat-focus-indicator fuse-mat-button-large w-full mt-6 ng-tns-c132-6 mat-flat-button mat-button-base mat-primary"
                 >
-                    Reset your password
+                    Sign in
                 </button>
-                <small class="flex items-baseline mt-1 font-medium">
-                    Return to &nbsp;
-                    <a href="#" class="text-blue-600 hover:underline mt-1">
-                        sign in</a
-                    >
-                </small>
             </form>
         </div>
     </div>

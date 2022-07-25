@@ -10,12 +10,11 @@ import { FuseAlertModule } from '@fuse/components/alert';
 import { SharedModule } from 'app/shared/shared.module';
 import { AuthResetPasswordComponent } from 'app/modules/auth/reset-password/reset-password.component';
 import { authResetPasswordRoutes } from 'app/modules/auth/reset-password/reset-password.routing';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-    declarations: [
-        AuthResetPasswordComponent
-    ],
-    imports     : [
+    declarations: [AuthResetPasswordComponent],
+    imports: [
         RouterModule.forChild(authResetPasswordRoutes),
         MatButtonModule,
         MatFormFieldModule,
@@ -24,9 +23,8 @@ import { authResetPasswordRoutes } from 'app/modules/auth/reset-password/reset-p
         MatProgressSpinnerModule,
         FuseCardModule,
         FuseAlertModule,
-        SharedModule
-    ]
+        SharedModule,
+        MatCheckboxModule,
+    ],
 })
-export class AuthResetPasswordModule
-{
-}
+export class AuthResetPasswordModule {}

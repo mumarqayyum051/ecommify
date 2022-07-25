@@ -11,3 +11,8 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+.required:after {
+    content: " *";
+    color: grey;
+}

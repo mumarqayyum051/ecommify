@@ -4,7 +4,7 @@
     <mat-drawer-container class="flex-auto sm:h-full">
         <!-- Drawer -->
         <mat-drawer
-            class="sm:w-96 dark:bg-[#3730a3]"
+            class="dark:bg-[#3730a3] setting-drawer"
             [autoFocus]="false"
             [mode]="drawerMode"
             [opened]="drawerOpened"
@@ -27,61 +27,179 @@
             </div>
             <!-- Panel Links -->
             <div class="items-container">
-                <div class="item-container-description">
-                    <ul class="items">
-                        <li class="item">
-                            <div class="item-container">
-                                <span class="item-icon">
-                                    <mat-icon
-                                        class="fuse-vertical-navigation-item-icon"
-                                    ></mat-icon>
-                                </span>
-                                <span class="item-label"> Your Details </span>
+                <div
+                    class="item-container-description flex flex-col gap-4 sm:my-10 ng-tns-c167-6"
+                >
+                    <div class="ml-8">
+                        <h3
+                            class="text-primary-500 font-semibold leading-6 uppercase"
+                        >
+                            General Settings
+                        </h3>
+                        <div class="text-secondary text-sm">
+                            Task, project and team
+                        </div>
+                    </div>
+                    <ul class="items flex flex-col gap-6">
+                        <li
+                            class="item py-3 cursor-pointer"
+                            *ngFor="
+                                let setting of generalSettings;
+                                trackBy: trackByFn
+                            "
+                            [ngClass]="{
+                                'hover:bg-gray-100 dark:hover:bg-hover':
+                                    !selectedPanel ||
+                                    selectedPanel !== setting.id,
+                                'bg-primary-50 dark:bg-hover':
+                                    selectedPanel &&
+                                    selectedPanel === setting.id
+                            }"
+                        >
+                            <div
+                                class="ml-8 flex text-secondary font-semibold justify-content-around gap-5"
+                            >
+                                <mat-icon
+                                    [ngClass]="{
+                                        'text-secondary':
+                                            !selectedPanel ||
+                                            selectedPanel !== setting.id,
+                                        'text-primary dark:text-primary-500':
+                                            selectedPanel &&
+                                            selectedPanel === setting.id
+                                    }"
+                                    [svgIcon]="setting.icon"
+                                ></mat-icon>
+                                <div>{{ setting.title }}</div>
                             </div>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <!-- Panel links -->
-            <div class="flex flex-col divide-y border-t border-b">
-                <ng-container *ngFor="let panel of panels; trackBy: trackByFn">
-                    <div
-                        class="flex px-8 py-5 cursor-pointer"
-                        [ngClass]="{
-                            'hover:bg-gray-100 dark:hover:bg-hover':
-                                !selectedPanel || selectedPanel !== panel.id,
-                            'bg-primary-50 dark:bg-hover':
-                                selectedPanel && selectedPanel === panel.id
-                        }"
-                        (click)="goToPanel(panel.id)"
-                    >
-                        <mat-icon
+                <div
+                    class="item-container-description flex flex-col gap-2 sm:my-10 ng-tns-c167-6"
+                >
+                    <div class="ml-8">
+                        <h3
+                            class="text-primary-500 font-semibold leading-6 uppercase"
+                        >
+                            Integrations
+                        </h3>
+                    </div>
+                    <ul class="items flex flex-col">
+                        <li
+                            class="item py-3 cursor-pointer flex justify-between items-center"
+                            *ngFor="
+                                let setting of integrationSettings;
+                                trackBy: trackByFn
+                            "
                             [ngClass]="{
-                                'text-hint':
+                                'hover:bg-gray-100 dark:hover:bg-hover':
                                     !selectedPanel ||
-                                    selectedPanel !== panel.id,
-                                'text-primary dark:text-primary-500':
-                                    selectedPanel && selectedPanel === panel.id
+                                    selectedPanel !== setting.id,
+                                'bg-primary-50 dark:bg-hover':
+                                    selectedPanel &&
+                                    selectedPanel === setting.id
                             }"
-                            [svgIcon]="panel.icon"
-                        ></mat-icon>
-                        <div class="ml-3">
+                        >
                             <div
-                                class="font-medium leading-6"
-                                [ngClass]="{
-                                    'text-primary dark:text-primary-500':
-                                        selectedPanel &&
-                                        selectedPanel === panel.id
-                                }"
+                                class="ml-8 flex text-secondary font-semibold justify-content-around gap-5"
                             >
-                                {{ panel.title }}
+                                <mat-icon
+                                    [ngClass]="{
+                                        'text-secondary':
+                                            !selectedPanel ||
+                                            selectedPanel !== setting.id,
+                                        'text-primary dark:text-primary-500':
+                                            selectedPanel &&
+                                            selectedPanel === setting.id
+                                    }"
+                                    [svgIcon]="setting.icon"
+                                ></mat-icon>
+                                <div>{{ setting.title }}</div>
                             </div>
-                            <div class="mt-0.5 text-secondary">
-                                {{ panel.description }}
+                            <div
+                                class="bg-indigo-500 rounded-xl text-white font-semibold mx-2 w-10 min-w-max text-center"
+                            >
+                                {{ setting.counter }}
                             </div>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="item-container-description flex flex-col gap-2 sm:my-10 ng-tns-c167-6 mb-20"
+                >
+                    <div class="ml-8">
+                        <h3
+                            class="text-primary-500 font-semibold leading-6 uppercase"
+                        >
+                            PIM SETTINGS
+                        </h3>
+                    </div>
+                    <ul class="items flex flex-col">
+                        <li
+                            class="item py-3 cursor-pointer flex justify-between items-center"
+                            *ngFor="
+                                let setting of pimSettings;
+                                trackBy: trackByFn
+                            "
+                            [ngClass]="{
+                                'hover:bg-gray-100 dark:hover:bg-hover':
+                                    !selectedPanel ||
+                                    selectedPanel !== setting.id,
+                                'bg-primary-50 dark:bg-hover':
+                                    selectedPanel &&
+                                    selectedPanel === setting.id
+                            }"
+                        >
+                            <div
+                                class="ml-8 flex text-secondary font-semibold justify-content-around gap-5"
+                            >
+                                <mat-icon
+                                    [ngClass]="{
+                                        'text-secondary':
+                                            !selectedPanel ||
+                                            selectedPanel !== setting.id,
+                                        'text-primary dark:text-primary-500':
+                                            selectedPanel &&
+                                            selectedPanel === setting.id
+                                    }"
+                                    [svgIcon]="setting.icon"
+                                ></mat-icon>
+                                <div>{{ setting.title }}</div>
+                            </div>
+                            <div class="w-10 mr-3 text-center">
+                                <mat-icon
+                                    svgIcon="heroicons_solid:chevron-right"
+                                    class="text-secondary h-5 w-5 min-h-0 min-w-0"
+                                ></mat-icon>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="solid ng-tns-c66-1" />
+                <div
+                    class="item-container-description flex ml-8 flex-col gap-10 sm:my-10 ng-tns-c167-6 mb-20"
+                >
+                    <div *ngFor="let info of information; trackBy: trackByFn">
+                        <h1 class="font-bold flex items-center text-lg gap-2">
+                            <mat-icon
+                                class="text-secondary"
+                                [svgIcon]="info.icon"
+                            ></mat-icon>
+                            {{ info.title }}
+                        </h1>
+                        <div class="my-2 text-secondary">
+                            {{ info.used | number }} of
+                            {{ info.total | number }} used
+                        </div>
+                        <div class="w-11/12 bg-gray-200 h-1">
+                            <div
+                                class="bg-blue-600 h-1"
+                                style="width: 40%"
+                            ></div>
                         </div>
                     </div>
-                </ng-container>
+                </div>
             </div>
         </mat-drawer>
 

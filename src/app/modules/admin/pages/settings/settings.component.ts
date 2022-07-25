@@ -25,6 +25,10 @@ export class SettingsComponent implements OnInit {
     drawerMode: 'over' | 'side' = 'side';
     drawerOpened: boolean = true;
     panels: any[] = [];
+    generalSettings: any[] = [];
+    integrationSettings: any[] = [];
+    pimSettings: any[] = [];
+    information: any[] = [];
     selectedPanel: string = 'account';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -46,8 +50,78 @@ export class SettingsComponent implements OnInit {
      * On init
      */
     ngOnInit(): void {
+        // general settings
+        this.generalSettings = [
+            {
+                id: 'details',
+                title: 'Your details',
+                icon: 'heroicons_outline:plus-circle',
+            },
+            {
+                id: 'user',
+                title: 'User',
+                icon: 'heroicons_outline:user-add',
+            },
+        ];
+        // integration setting
+        this.integrationSettings = [
+            {
+                id: 'all-integrations',
+                title: 'All integrations',
+                icon: 'heroicons_outline:clipboard-list',
+                counter: 46,
+            },
+            {
+                id: 'default-mapping',
+                title: 'Default mapping',
+                icon: 'heroicons_outline:clipboard-copy',
+                counter: 0,
+            },
+            {
+                id: 'custom-inegration-request',
+                title: 'Custom integraion request',
+                icon: 'heroicons_outline:clipboard-check',
+                counter: 0,
+            },
+        ];
+        this.pimSettings = [
+            {
+                id: 'categores',
+                title: 'Categories',
+                icon: 'heroicons_outline:cog',
+            },
+            {
+                id: 'customer-fields',
+                title: 'Customer fields',
+                icon: 'heroicons_outline:user-circle',
+            },
+            {
+                id: 'source-mapping',
+                title: 'Source mapping',
+                icon: 'heroicons_outline:user-circle',
+            },
+        ];
+        this.information = [
+            {
+                title: 'SKUs',
+                icon: 'heroicons_solid:database',
+                total: 20000,
+                used: 12000,
+            },
+            {
+                title: 'Integrations',
+                icon: 'heroicons_solid:users',
+                total: 3,
+                used: 2,
+            },
+        ];
         // Setup available panels
         this.panels = [
+            {
+                id: 'general_settings',
+                title: 'General Settings',
+                description: 'Task, project and team',
+            },
             {
                 id: 'account',
                 icon: 'heroicons_outline:user-circle',
@@ -56,9 +130,9 @@ export class SettingsComponent implements OnInit {
                     'Manage your public profile and private information',
             },
             {
-                id: 'security',
+                id: 'users',
                 icon: 'heroicons_outline:lock-closed',
-                title: 'Security',
+                title: 'Users',
                 description:
                     'Manage your password and 2-step verification preferences',
             },

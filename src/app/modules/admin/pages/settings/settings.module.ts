@@ -1,3 +1,4 @@
+import { SideDrawerComponent } from './side-drawer/side-drawer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,6 +28,7 @@ import { TestComponent } from './test/test.component';
         SettingsTeamComponent,
         SettingsComponent,
         TestComponent,
+        SideDrawerComponent,
     ],
     imports: [
         RouterModule.forChild(settingsRoutes),

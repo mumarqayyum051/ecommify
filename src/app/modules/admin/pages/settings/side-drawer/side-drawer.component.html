@@ -1,8 +1,8 @@
-<div class="example-sidenav-content">
+<!-- <div class="example-sidenav-content">
     <button type="button" mat-button (click)="drawer.toggle()">
         Toggle sidenav
     </button>
-</div>
+</div> -->
 
 <div class="fuse-drawer-content">
     <mat-sidenav-container
@@ -11,6 +11,7 @@
         position="right"
         autosize
         fullscreen
+        [opened]="open"
     >
         <mat-sidenav #drawer class="example-sidenav" mode="over" position="end">
             <div class="flex">

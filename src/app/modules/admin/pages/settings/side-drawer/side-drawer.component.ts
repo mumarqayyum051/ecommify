@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/quotes */
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
     UntypedFormBuilder,
     UntypedFormGroup,
@@ -16,6 +17,7 @@ export class SideDrawerComponent implements OnInit {
     showFiller = false;
     integrationLinks: any[] = [];
     accountForm: UntypedFormGroup;
+    @Input() open: boolean = false;
 
     /**
      * Constructor

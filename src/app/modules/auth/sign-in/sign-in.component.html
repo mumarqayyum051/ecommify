@@ -58,12 +58,12 @@
                     </div>
                 </div>
             </div>
-            <form action="">
+            <form [formGroup]="signInForm">
                 <div class="mt-4">
                     <!-- Email field -->
                     <mat-form-field class="w-full">
-                        <mat-label class="required">Email address</mat-label>
-                        <input id="email" matInput />
+                        <mat-label>Email address</mat-label>
+                        <input id="email" matInput formControlName="email" />
                         <mat-error> Email address is required </mat-error>
                         <mat-error>
                             Please enter a valid email address
@@ -72,11 +72,12 @@
 
                     <!-- Password field -->
                     <mat-form-field class="w-full">
-                        <mat-label class="required">Password</mat-label>
+                        <mat-label>Password</mat-label>
                         <input
                             id="password"
                             matInput
                             type="password"
+                            formControlName="password"
                             #passwordField
                         />
                         <button
@@ -105,7 +106,10 @@
                     <div
                         class="inline-flex items-end justify-between w-full mt-1.5"
                     >
-                        <mat-checkbox [color]="'primary'">
+                        <mat-checkbox
+                            [color]="'primary'"
+                            formControlName="rememberMe"
+                        >
                             Remember me
                         </mat-checkbox>
                         <a
@@ -118,8 +122,15 @@
                 <button
                     type="submit"
                     class="submit-button mat-focus-indicator fuse-mat-button-large w-full mt-6 ng-tns-c132-6 mat-flat-button mat-button-base mat-primary"
+                    (click)="signIn()"
+                    [disabled]="!signInForm.valid"
                 >
-                    Sign in
+                    <span *ngIf="!signInForm.disabled"> Sign in </span>
+                    <mat-progress-spinner
+                        *ngIf="signInForm.disabled"
+                        [diameter]="24"
+                        [mode]="'indeterminate'"
+                    ></mat-progress-spinner>
                 </button>
             </form>
         </div>

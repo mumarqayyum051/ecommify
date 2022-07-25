@@ -20,6 +20,7 @@ import { FuseVerticalNavigationGroupItemComponent } from '@fuse/components/navig
 import { FuseVerticalNavigationSpacerItemComponent } from '@fuse/components/navigation/vertical/components/spacer/spacer.component';
 import { FuseVerticalNavigationComponent } from '@fuse/components/navigation/vertical/vertical.component';
 import { FooterInfoComponent } from './footer/footer-info/footer-info.component';
+import { SharedModule } from 'app/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -46,6 +47,7 @@ import { FooterInfoComponent } from './footer/footer-info/footer-info.component'
         MatMenuModule,
         MatTooltipModule,
         FuseScrollbarModule,
+        SharedModule
     ],
     exports: [
         FuseHorizontalNavigationComponent,

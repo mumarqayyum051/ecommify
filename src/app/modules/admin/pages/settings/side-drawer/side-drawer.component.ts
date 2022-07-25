@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/quotes */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {
     UntypedFormBuilder,
     UntypedFormGroup,
     Validators,
 } from '@angular/forms';
+import { DataService } from 'app/core/services/data.service';
 /** @title Drawer with explicit backdrop setting */
 @Component({
     selector: 'side-drawer',
@@ -14,6 +15,8 @@ import {
     styleUrls: ['side-drawer.component.scss'],
 })
 export class SideDrawerComponent implements OnInit {
+    @ViewChild('settingsDrawer') settingsDrawer: any;
+    @Input() isOpen: boolean;
     showFiller = false;
     integrationLinks: any[] = [];
     accountForm: UntypedFormGroup;
@@ -22,7 +25,10 @@ export class SideDrawerComponent implements OnInit {
     /**
      * Constructor
      */
-    constructor(private _formBuilder: UntypedFormBuilder) {}
+    constructor(
+        private _formBuilder: UntypedFormBuilder,
+        public dataService: DataService
+    ) {}
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -66,6 +72,7 @@ export class SideDrawerComponent implements OnInit {
             },
         ];
     }
+
     /**
      * Track by function for ngFor loops
      *

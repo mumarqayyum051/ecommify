@@ -19,6 +19,7 @@ import { SettingsTeamComponent } from 'app/modules/admin/pages/settings/team/tea
 import { settingsRoutes } from 'app/modules/admin/pages/settings/settings.routing';
 import { SettingsComponent } from './settings.component';
 import { TestComponent } from './test/test.component';
+import { FuseDrawerModule } from '@fuse/components/drawer';
 @NgModule({
     declarations: [
         SettingsAccountComponent,
@@ -42,6 +43,7 @@ import { TestComponent } from './test/test.component';
         MatSlideToggleModule,
         FuseAlertModule,
         SharedModule,
+        FuseDrawerModule,
     ],
 })
 export class SettingsModule {}

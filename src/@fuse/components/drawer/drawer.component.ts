@@ -26,6 +26,7 @@ import {
 import { FuseDrawerService } from '@fuse/components/drawer/drawer.service';
 import { FuseUtilsService } from '@fuse/services/utils/utils.service';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { DataService } from 'app/core/services/data.service';
 
 @Component({
     selector: 'fuse-drawer',
@@ -70,7 +71,8 @@ export class FuseDrawerComponent implements OnChanges, OnInit, OnDestroy {
         private _elementRef: ElementRef,
         private _renderer2: Renderer2,
         private _fuseDrawerService: FuseDrawerService,
-        private _fuseUtilsService: FuseUtilsService
+        private _fuseUtilsService: FuseUtilsService,
+        public dataService: DataService
     ) {
         this._handleOverlayClick = (): void => {
             this.close();
@@ -86,15 +88,7 @@ export class FuseDrawerComponent implements OnChanges, OnInit, OnDestroy {
      */
     @HostBinding('class') get classList(): any {
         /* eslint-disable @typescript-eslint/naming-convention */
-        const obj = {
-            'fuse-drawer-animations-enabled': this._animationsEnabled,
-            'fuse-drawer-fixed': this.fixed,
-            'fuse-drawer-hover': this._hovered,
-            [`fuse-drawer-mode-${this.mode}`]: true,
-            'fuse-drawer-opened': this.opened,
-            [`fuse-drawer-position-${this.position}`]: true,
-        };
-        console.log({ obj });
+
         return {
             'fuse-drawer-animations-enabled': this._animationsEnabled,
             'fuse-drawer-fixed': this.fixed,
@@ -377,6 +371,7 @@ export class FuseDrawerComponent implements OnChanges, OnInit, OnDestroy {
             return;
         }
 
+        this.dataService.isDrawerOpened = false;
         // Create the leave animation and attach it to the player
         this._player = this._animationBuilder
             .build([

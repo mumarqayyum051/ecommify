@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable quotes */
@@ -15,6 +16,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { settingsRoutes } from './settings.routing';
+import { DataService } from 'app/core/services/data.service';
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
@@ -33,13 +35,15 @@ export class SettingsComponent implements OnInit {
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     // eslint-disable-next-line @typescript-eslint/member-ordering
     settingRoutes: any = settingsRoutes;
+    open: boolean = false;
 
     /**
      * Constructor
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _fuseMediaWatcherService: FuseMediaWatcherService
+        private _fuseMediaWatcherService: FuseMediaWatcherService,
+        private dataService: DataService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -185,6 +189,13 @@ export class SettingsComponent implements OnInit {
         this._unsubscribeAll.complete();
     }
 
+    onNavigationOptClick(settings) {
+        console.log(settings);
+        if (settings.id === 'all-integrations') {
+            this.open = !this.open;
+            this.dataService.isDrawerOpened = !this.dataService.isDrawerOpened;
+        }
+    }
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------

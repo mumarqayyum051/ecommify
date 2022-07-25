@@ -100,6 +100,7 @@
                                     selectedPanel &&
                                     selectedPanel === setting.id
                             }"
+                            (click)="onNavigationOptClick(setting)"
                         >
                             <div
                                 class="ml-8 flex text-secondary font-semibold justify-content-around gap-5"
@@ -257,3 +258,5 @@
         </mat-drawer-content>
     </mat-drawer-container>
 </div>
+
+<side-drawer [isOpen]="open"></side-drawer>

@@ -5,7 +5,8 @@
     right: 0vw;
 }
 .main-drawer {
-    transition: 0.3s all cubic-bezier(0, 0, 0, 1.13);
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     position: fixed;
     height: 100vh;
     top: 0;
@@ -24,4 +25,22 @@
 }
 .item {
     border-bottom: 1px solid #e2e8f0;
+}
+.drawer-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1099;
+    background-color: #0009;
+    transition: 5s all cubic-bezier(0, 0, 0, 1.13);
+}
+.drawer-inner-container {
+    z-index: 1100;
+    position: relative;
+    background: white;
+    box-shadow: 0 2px 8px #00000059;
 }

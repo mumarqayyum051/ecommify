@@ -1,136 +1,161 @@
-<div class="example-sidenav-content">
-    <button type="button" mat-button (click)="showDrawer = !showDrawer">
-        Toggle sidenav
-    </button>
-</div>
 <div
     class="main-drawer bg-indigo"
     [ngClass]="dataService.isDrawerOpened ? 'open-draw' : 'hide-draw'"
 >
-    <div class="flex justify-end drawer-nav h-16 items-center">
-        <mat-icon svgIcon="heroicons_outline:arrows-expand"></mat-icon>
-        <mat-icon svgIcon="heroicons_outline:search"></mat-icon>
-        <mat-icon svgIcon="heroicons_outline:bell"></mat-icon>
-    </div>
-    <hr _ngcontent-uyl-c179="" class="solid ng-tns-c66-1 m-0" />
-    <div class="flex h-full">
-        <div class="integration-items flex flex-col ng-tns-c167-6 w-2/6">
-            <h3 class="text-3xl my-7 font-bold leading-6 capitalized ml-5">
-                Add Integrations
-            </h3>
-            <hr
-                _ngcontent-uyl-c179=""
-                class="solid ng-tns-c66-1 m-0 border-b-0"
-            />
-            <ul class="items flex flex-col">
-                <li
-                    class="item cursor-pointer flex justify-between items-center hover:bg-indigo-50"
-                    *ngFor="let item of integrationLinks; trackBy: trackByFn"
-                >
-                    <div
-                        class="flex text-secondary font-semibold justify-content-around gap-1 p-5"
-                    >
-                        <mat-icon [svgIcon]="item.icon"></mat-icon>
-                        <div>{{ item.title }}</div>
-                    </div>
-                    <div
-                        *ngIf="!item.isActive"
-                        class="bg-indigo-500 rounded-xl text-white font-semibold mx-2 w-14 text-sm min-w-max text-center"
-                    >
-                        inactive
-                    </div>
-                </li>
-            </ul>
+    <div class="drawer-inner-container">
+        <div class="flex justify-end drawer-nav h-16 items-center">
+            <mat-icon svgIcon="heroicons_outline:arrows-expand"></mat-icon>
+            <mat-icon svgIcon="heroicons_outline:search"></mat-icon>
+            <mat-icon svgIcon="heroicons_outline:bell"></mat-icon>
         </div>
-        <div class="w-4/6" style="background: #f1f4f9">
-            <!-- Form -->
-            <form [formGroup]="accountForm" class="mx-10">
-                <!-- Section -->
-                <div class="w-full">
-                    <div class="text-3xl my-3 font-bold leading-6 capitalized">
-                        Add Maropost Commerce Cloud
-                    </div>
-                    <div class="text-secondary">
-                        Sync products, inventory, orders and tracking to
-                        Maropost
-                    </div>
-                    <div class="font-bold my-5">Connectivity</div>
-                </div>
-                <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
-                    <!-- Name -->
-                    <div class="sm:col-span-4">
-                        <mat-form-field class="fuse-mat-no-subscript w-full">
-                            <mat-label>Integration Name</mat-label>
-                            <input
-                                [formControlName]="'integrationName'"
-                                matInput
-                            />
-                        </mat-form-field>
-                    </div>
-                    <!-- Username -->
-                    <div class="sm:col-span-4">
-                        <mat-form-field
-                            class="fuse-mat-no-subscript fuse-mat-emphasized-affix w-full"
+        <hr _ngcontent-uyl-c179="" class="solid ng-tns-c66-1 m-0" />
+        <div class="flex h-full">
+            <div class="integration-items flex flex-col ng-tns-c167-6 w-2/6">
+                <h3 class="text-3xl my-7 font-bold leading-6 capitalized ml-5">
+                    Add Integrations
+                </h3>
+                <hr
+                    _ngcontent-uyl-c179=""
+                    class="solid ng-tns-c66-1 m-0 border-b-0"
+                />
+                <ul class="items flex flex-col">
+                    <li
+                        class="item cursor-pointer flex justify-between items-center hover:bg-indigo-50"
+                        *ngFor="
+                            let item of integrationLinks;
+                            trackBy: trackByFn
+                        "
+                    >
+                        <div
+                            class="flex text-secondary font-semibold justify-content-around gap-1 p-5"
                         >
-                            <mat-label>StoreURL</mat-label>
-                            <div class="text-secondary" matPrefix>https://</div>
-                            <input [formControlName]="'storeUrl'" matInput />
-                        </mat-form-field>
-                    </div>
-                    <!-- Username -->
-                    <div class="sm:col-span-2">
-                        <mat-form-field class="fuse-mat-no-subscript w-full">
-                            <mat-label>Username</mat-label>
-                            <input [formControlName]="'username'" matInput />
-                        </mat-form-field>
-                    </div>
-                    <!-- Company -->
-                    <div class="sm:col-span-2">
-                        <mat-form-field class="fuse-mat-no-subscript w-full">
-                            <mat-label>Api key</mat-label>
-                            <input [formControlName]="'apiKey'" matInput />
-                        </mat-form-field>
-                    </div>
-                    <div class="text-secondary my-5 sm:col-span-4">
-                        For more information about on API credentials for
-                        Maropost, please see the following url:
-                    </div>
-                    <div class="sm:col-span-4">
-                        <mat-label class="text-lg font-semibold my-2"
-                            >Sync Options</mat-label
+                            <mat-icon [svgIcon]="item.icon"></mat-icon>
+                            <div>{{ item.title }}</div>
+                        </div>
+                        <div
+                            *ngIf="!item.isActive"
+                            class="bg-indigo-500 rounded-xl text-white font-semibold mx-2 w-14 text-sm min-w-max text-center"
                         >
-                        <div class="flex flex-col mt-1 gap-3">
-                            <div
-                                class="flex justify-between"
-                                *ngFor="let option of syncOptions"
+                            inactive
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-4/6" style="background: #f1f4f9">
+                <!-- Form -->
+                <form [formGroup]="accountForm" class="mx-10">
+                    <!-- Section -->
+                    <div class="w-full">
+                        <div
+                            class="text-3xl my-3 font-bold leading-6 capitalized"
+                        >
+                            Add Maropost Commerce Cloud
+                        </div>
+                        <div class="text-secondary">
+                            Sync products, inventory, orders and tracking to
+                            Maropost
+                        </div>
+                        <div class="font-bold my-5">Connectivity</div>
+                    </div>
+                    <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                        <!-- Name -->
+                        <div class="sm:col-span-4">
+                            <mat-form-field
+                                class="fuse-mat-no-subscript w-full"
                             >
-                                {{ option.title }}
-                                <mat-slide-toggle
-                                    [ngClass]="option.isToggle && mat - checked"
-                                ></mat-slide-toggle>
+                                <mat-label>Integration Name</mat-label>
+                                <input
+                                    [formControlName]="'integrationName'"
+                                    matInput
+                                />
+                            </mat-form-field>
+                        </div>
+                        <!-- Username -->
+                        <div class="sm:col-span-4">
+                            <mat-form-field
+                                class="fuse-mat-no-subscript fuse-mat-emphasized-affix w-full"
+                            >
+                                <mat-label>StoreURL</mat-label>
+                                <div class="text-secondary" matPrefix>
+                                    https://
+                                </div>
+                                <input
+                                    [formControlName]="'storeUrl'"
+                                    matInput
+                                />
+                            </mat-form-field>
+                        </div>
+                        <!-- Username -->
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                                class="fuse-mat-no-subscript w-full"
+                            >
+                                <mat-label>Username</mat-label>
+                                <input
+                                    [formControlName]="'username'"
+                                    matInput
+                                />
+                            </mat-form-field>
+                        </div>
+                        <!-- Company -->
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                                class="fuse-mat-no-subscript w-full"
+                            >
+                                <mat-label>Api key</mat-label>
+                                <input [formControlName]="'apiKey'" matInput />
+                            </mat-form-field>
+                        </div>
+                        <div class="text-secondary my-5 sm:col-span-4">
+                            For more information about on API credentials for
+                            Maropost, please see the following url:
+                        </div>
+                        <div class="sm:col-span-4">
+                            <mat-label class="text-lg font-semibold my-2"
+                                >Sync Options</mat-label
+                            >
+                            <div class="flex flex-col mt-1 gap-3">
+                                <div
+                                    class="flex justify-between"
+                                    *ngFor="let option of syncOptions"
+                                >
+                                    {{ option.title }}
+                                    <mat-slide-toggle
+                                        [ngClass]="
+                                            option.isToggle && mat - checked
+                                        "
+                                    ></mat-slide-toggle>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Divider -->
-                <div class="mt-11 mb-10 border-t"></div>
-
-                <!-- Actions -->
-                <div class="flex items-center justify-end">
-                    <button mat-stroked-button type="button" class="rounded-md">
-                        Cancel
-                    </button>
-                    <button
-                        class="ml-4 rounded-md"
-                        mat-flat-button
-                        type="button"
-                        [color]="'primary'"
-                    >
-                        Save
-                    </button>
-                </div>
-            </form>
+                    <!-- Divider -->
+                    <div class="mt-11 mb-10 border-t"></div>
+                    <!-- Actions -->
+                    <div class="flex items-center justify-end">
+                        <button
+                            mat-stroked-button
+                            type="button"
+                            class="rounded-md"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            class="ml-4 rounded-md"
+                            mat-flat-button
+                            type="button"
+                            [color]="'primary'"
+                        >
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="drawer-overlay"></div>
+    <div
+        class="drawer-overlay"
+        *ngIf="dataService.isDrawerOpened"
+        (click)="dataService.isDrawerOpened = !dataService.isDrawerOpened"
+    ></div>
 </div>

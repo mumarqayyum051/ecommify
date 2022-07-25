@@ -321,6 +321,7 @@ export class FuseVerticalNavigationComponent
      * On init
      */
     ngOnInit(): void {
+        window.scrollTo(0, 0);
         // Make sure the name input is not an empty string
         if (this.name === '') {
             this.name = this._fuseUtilsService.randomId();

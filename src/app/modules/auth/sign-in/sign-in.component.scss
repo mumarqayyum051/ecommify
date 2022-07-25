@@ -1,0 +1,44 @@
+a {
+    color: rgb(99, 102, 241) !important;
+}
+label {
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 14px;
+}
+input:focus {
+    caret-color: #4f46e5;
+}
+.main-div {
+    background: #f0f5f9;
+}
+.form-input {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+.submit-button {
+    background-color: #4f46e5 !important;
+    color: white;
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    line-height: 36px;
+    padding: 5px 16px;
+    border-radius: 7px;
+    margin-top: 24px;
+}
+.info-div {
+    background-image: url("/assets/images/backgrounds/auth-page.png");
+}
+.container-div {
+    min-height: 80vh;
+    max-height: 85vh;
+}

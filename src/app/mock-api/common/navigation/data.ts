@@ -14,8 +14,9 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Integration status',
                 type: 'basic',
                 icon: 'heroicons_outline:clipboard-check',
-                link: '/dashboards/project',
+                link: '/dashboards/integrations',
             },
+
             {
                 id: 'dashboards.products',
                 title: 'Products (Coming Soon)',
@@ -52,6 +53,32 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: 'basic',
                 icon: 'heroicons_outline:cloud',
                 link: '/apps/contacts',
+            },
+        ],
+    },
+    {
+        id: 'sync_logs',
+        title: 'Sync logs',
+        type: 'group',
+        icon: 'heroicons_outline:home',
+        children: [
+            {
+                id: 'sync_logs.products',
+                title: 'Products',
+                type: 'basic',
+                icon: 'heroicons_outline:clipboard-check',
+            },
+            {
+                id: 'sync_logs.inventory',
+                title: 'Inventory',
+                type: 'basic',
+                icon: 'heroicons_outline:clipboard-check',
+            },
+            {
+                id: 'sync_logs.inventory',
+                title: 'Inventory',
+                type: 'basic',
+                icon: 'heroicons_outline:clipboard-check',
             },
         ],
     },
@@ -166,8 +193,8 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {
-        id: 'others',
-        title: 'OTHERS',
+        id: 'sync-logs',
+        title: 'SYNC LOGS',
         type: 'group',
     },
     {

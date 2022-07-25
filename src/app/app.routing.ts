@@ -41,6 +41,7 @@ export const appRoutes: Route[] = [
                         'app/modules/auth/confirmation-required/confirmation-required.module'
                     ).then((m) => m.AuthConfirmationRequiredModule),
             },
+
             {
                 path: 'forgot-password',
                 loadChildren: () =>
@@ -139,6 +140,13 @@ export const appRoutes: Route[] = [
             {
                 path: 'dashboards',
                 children: [
+                    {
+                        path: 'integrations',
+                        loadChildren: () =>
+                            import(
+                                'app/modules/admin/pages/integrations/integrations.module'
+                            ).then((m) => m.IntegrationsModule),
+                    },
                     {
                         path: 'project',
                         loadChildren: () =>

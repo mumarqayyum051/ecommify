@@ -29,18 +29,6 @@
             <ng-container
                 *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden"
             >
-                <!-- Aside -->
-                <ng-container *ngIf="item.type === 'aside'">
-                    <fuse-vertical-navigation-aside-item
-                        [item]="item"
-                        [name]="name"
-                        [activeItemId]="activeAsideItemId"
-                        [autoCollapse]="autoCollapse"
-                        [skipChildren]="true"
-                        (click)="toggleAside(item)"
-                    ></fuse-vertical-navigation-aside-item>
-                </ng-container>
-
                 <!-- Basic -->
                 <ng-container *ngIf="item.type === 'basic'">
                     <fuse-vertical-navigation-basic-item
@@ -149,10 +137,9 @@
     </div>
 </div>
 
-
-<ng-template >
+<ng-template>
     <mat-menu #aboveMenu="matMenu" yPosition="above">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
 </ng-template>

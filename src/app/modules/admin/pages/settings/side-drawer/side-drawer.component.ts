@@ -17,7 +17,25 @@ import { DataService } from 'app/core/services/data.service';
 export class SideDrawerComponent implements OnInit {
     @ViewChild('settingsDrawer') settingsDrawer: any;
     @Input() isOpen: boolean;
-    showFiller = false;
+    showDrawer = false;
+    syncOptions = [
+        {
+            title: 'Products',
+            isToggle: false,
+        },
+        {
+            title: 'Inventory',
+            isToggle: true,
+        },
+        {
+            title: 'Orders',
+            isToggle: true,
+        },
+        {
+            title: 'Tracking',
+            isToggle: true,
+        },
+    ];
     integrationLinks: any[] = [];
     accountForm: UntypedFormGroup;
     @Input() open: boolean = false;
